@@ -5,21 +5,32 @@
 {% endblock meta %}
 
 {% block content %}
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Syafri Barry Salim</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <br></br>
 
 <div class = "login">
-
-    <h1>Login</h1>
+    <body style = "font-family:'Courier New';text-align:left; padding: 15px; background: rgb(2,0,36); background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(145,145,245,1) 88%, rgba(0,212,255,1) 100%);color: rgb(0, 0, 0);">
+    <h1 style = "color: rgb(255, 255, 255); padding: 10px; ">Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}
         <table>
             <tr>
-                <td>Username: </td>
+                <td style = "color: rgb(255, 255, 255); padding: 10px; ">Username: </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
             </tr>
                     
             <tr>
-                <td>Password: </td>
+                <td style = "color: rgb(255, 255, 255); padding: 10px; ">Password: </td>
                 <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
 
@@ -38,8 +49,8 @@
         </ul>
     {% endif %}     
         
-    Belum mempunyai akun? <a href="{% url 'wishlist:register' %}">Buat Akun</a>
-
+    <h5 style = "color: rgb(255, 255, 255); padding: 10px; ">Belum mempunyai akun? <a href="{% url 'wishlist:register' %}">Buat Akun</a></h5>
+    </body>
 </div>
 
 {% endblock content %}

@@ -1,58 +1,37 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
+
+{% load static %}
+
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Syafri Barry Salim</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
         <button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
       </form>
     </div>
   </div>
 </nav>
+<br></br>
 
-<body style = "font-family:'Courier New';text-align:center; padding: 5px; background-color: #F1A661; color: rgb(0, 0, 0);">
-<h5 style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Nama: {{nama}}</h5>
+
+<body style = "font-family:'Courier New';text-align:left; padding: 15px; background: rgb(2,0,36); background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(123,241,149,1) 88%, rgba(0,212,255,1) 100%);color: rgb(0, 0, 0);">
+
 
 <style>
     table, th, td, button {
-      padding: 5px;
+      padding: 10px;
     }
     table {
-      border-spacing: 5px;
+      border-spacing: 10px;
     }
     ul {
         list-style-type: none;
-        margin: 0;
-        padding: 0;
+        margin: 10;
+        padding: 10;
       }
 </style>
 
