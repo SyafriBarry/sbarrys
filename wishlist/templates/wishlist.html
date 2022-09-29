@@ -1,25 +1,84 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 
 {% block content %}
-<h5>Nama: {{nama}}</h5>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<body style = "font-family:'Courier New';text-align:center; padding: 5px; background-color: #F1A661; color: rgb(0, 0, 0);">
+<h5 style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Nama: {{nama}}</h5>
+
+<style>
+    table, th, td, button {
+      padding: 5px;
+    }
+    table {
+      border-spacing: 5px;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+</style>
 
 
-<table>
+
+  
+
+
+<table style="width:100%">
     <tr>
-    <th>Nama Barang</th>
-    <th>Harga Barang</th>
-    <th>Deskripsi</th>
+    <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Nama Barang</th>
+    <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Harga Barang</th>
+    <th style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Deskripsi</th>
     </tr>
     {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
 {% for barang in list_barang %}
 <tr>
-    <th>{{barang.nama_barang}}</th>
-    <th>{{barang.harga_barang}}</th>
-    <th>{{barang.deskripsi}}</th>
+    <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{barang.nama_barang}}</th>
+    <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{barang.harga_barang}}</th>
+    <th style = "text-align: center; background-color: #CFD2CF; color: rgb(0, 0, 0); padding: 5px;">{{barang.deskripsi}}</th>
 </tr>
 {% endfor %}
 </table>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+<h5 style = "text-align: center; border-radius: 10px 10px 10px 10px;background-color: #D4F6CC; color: rgb(0, 0, 0); padding: 10px; ">Sesi terakhir login: {{ last_login }}</h5>
+
+
+</body>
 
 {% endblock content %}
