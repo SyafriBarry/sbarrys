@@ -11,6 +11,7 @@ from django.contrib import messages
 import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.http import JsonResponse
 
 # Create your views here.
 @login_required(login_url='/wishlist/login/')
@@ -73,6 +74,17 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('wishlist:login'))
     response.delete_cookie('last_login')
     return response
+
+
+@login_required(login_url='/wishlist/login/')
+def show_wishlist_ajax(request):
+    if request.method == 'POST':
+        temp = BarangWishlist(nama_barang=request.POST.get('judul'),harga_barang=request.POST.get('harga'),deskripsi=request.POST.get('description'))
+        temp.save()
+        return JsonResponse({'message': 'success'})
+
+    context = {}
+    return render(request, "wishlist_ajax.html",context)
 
 
 
